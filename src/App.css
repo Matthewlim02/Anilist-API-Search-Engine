@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+#animeCard:hover {
+  transition: ease-in-out;
+  transition-duration: 450ms;
+  transform: scale(1.1);
+}
+
+#posterDesigns {
+  padding-left: 7rem;
+}
+
+
+
+
