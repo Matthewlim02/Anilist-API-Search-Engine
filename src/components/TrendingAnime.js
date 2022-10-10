@@ -56,7 +56,7 @@ class TrendingAnime extends Component {
 
         const variables = {
             page: 1,
-            perPage: 15,
+            perPage: 27,
          };
 
          this.getAnime(query, variables)

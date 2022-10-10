@@ -4,53 +4,11 @@ import axios from 'axios';
 
 
 class Search extends Component {
-        state = {
-            error: null,
-            anime: [],
-            loading: false,
-            animeCount: 0,
-            allResults: 0
-        };
+       
+        //not working yet
 
-        searchAnime = async (query, variables) => {
-            try {
-                const results = await axios.post('https://graphql.anilist.co', {
-                    query,
-                    variables
-                });
-
-                setTimeout(() => {
-                    this.$Progress.finish();
-                    this.loading = false;
-                  }, 300);
-                  if (this.$Progress.finish()) {
-                    this.loading = false;
-                  }
-                  this.totalResults = results.data.data.Page.media.length;
-                  if (this.totalResults === 0) {
-                    this.$Progress.finish();
-                    this.loading = false;
-                  }
-
-                this.setState(() => ({
-                    items: results.data.data.Page.media
-                }));
-
-            } catch (error) {
-                console.log('An error has occured.')
-            }
-
-            this.anime.forEach((e) => {
-                if (e.type === "ANIME") {
-                  console.log(e.title.romaji, e.studios.nodes[0].name);
-                  this.animeCount++;
-                }
-              });
-        }
 
          componentDidMount() {
-            this.loading = true;
-            this.$Progress.start();
             const query = `
                 query ($id: Int, $page: Int, $perPage: Int $search: String) {
                     Page (page: $page, perPage: $perPage) {
@@ -105,17 +63,12 @@ class Search extends Component {
         const variables = {
             search: this.query,
             page: 1,
-            perPage: 80,
+            perPage: 50,
          };
-
-         this.searchAnime(query, variables)
-
         };
 
 
         render () {
-
-            const { items } = this.state;
 
                 return (
                     <div>
@@ -123,22 +76,25 @@ class Search extends Component {
                             <div class="container-fluid">
                                 <a class="navbar-brand text-white">Navbar</a>
                                 <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                                <button class="btn btn-outline-secondary bg-dark text-white" type="submit">Search</button>
+                                <input 
+                                class="form-control me-2" 
+                                type="search"
+                                name="query" 
+                                placeholder="Search" 
+                                aria-label="Search" 
+                               
+                                
+                                
+                                
+                                />
+                                <button 
+                                class="btn btn-outline-secondary bg-dark text-white" 
+                                type="submit"
+                               
+                                >
+                                    Search
+                                </button>
                                 </form>
-                            </div>
-                            <div>
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                    <a class="nav-link" href="#">About</a>
-                                    </li>
-                                    {/* <li class="nav-item">
-                                    <a class="nav-link disabled">Disabled</a>
-                                    </li> */}
-                                </ul>
                             </div>
                         </nav>
                     </div>

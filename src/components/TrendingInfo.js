@@ -5,7 +5,7 @@ const TrendingInfo = (props) => {
     return(
         <div>
             <div>
-                <div class="p-5" id="animeCard">
+                <div class="p-4" id="animeCard">
                     <a href={props.animeUrl} 
                             target="_blank" 
                             class="text-decoration-none text-white" 
@@ -14,10 +14,11 @@ const TrendingInfo = (props) => {
                             props.titles.english                       
                                 }>
                         <img 
-                            class="relative shadow-lg rounded-sm h-full w-full border border-secondary"
+                            class="relative shadow-lg rounded-sm w-full border border-secondary"
+                            id="trendingCard"
                             src={props.image}
                         />
-                        <p class="fs-6">
+                        <p class="fs-6 mt-1 text-center" id="animeTitles">
                             {props.titles.english === null ?
                             props.titles.romaji:
                             props.titles.english                       
