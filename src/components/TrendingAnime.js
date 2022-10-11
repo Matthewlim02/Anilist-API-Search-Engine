@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { RiFireFill } from 'react-icons/ri';
 import TrendingInfo from './TrendingInfo';
 
 
@@ -56,7 +57,7 @@ class TrendingAnime extends Component {
 
         const variables = {
             page: 1,
-            perPage: 27,
+            perPage: 9,
          };
 
          this.getAnime(query, variables)
@@ -69,16 +70,22 @@ class TrendingAnime extends Component {
             const { items } = this.state;
 
                 return (
-                    <div className="d-flex flex-wrap justify-items-evenly justify-between align-middle" id="posterDesigns">
-                        {items.map(item => (
-                            <TrendingInfo 
-                            key={item.id} 
-                            image={item.coverImage.large}
-                            titles={item.title}
-                            animeUrl={item.siteUrl}
-                            
-                            />
-                        ))}
+                    <div>
+                        <div className="fs-3" id="trendingTitle">  
+                            <p id="trendingColor"> Trending </p>
+                            <i id="fireIcon"><RiFireFill /></i>
+                        </div>
+                        <div className="d-flex flex-wrap justify-items-evenly justify-between align-middle" id="posterDesigns">
+                            {items.map(item => (
+                                <TrendingInfo 
+                                key={item.id} 
+                                image={item.coverImage.large}
+                                titles={item.title}
+                                animeUrl={item.siteUrl}
+                                
+                                />
+                            ))}
+                        </div>
                     </div>
                 );       
             

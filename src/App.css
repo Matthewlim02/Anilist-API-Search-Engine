@@ -1,11 +1,12 @@
 .App {
   text-align: center;
+  font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif; 
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #161617;
 }
 
 #animeCard:hover {
@@ -16,6 +17,7 @@ body {
 
 #posterDesigns {
   justify-content: center;
+  padding-top: 21.8%;
 }
 
 #trendingCard {
@@ -29,6 +31,25 @@ body {
   max-width: 150px;
   overflow: hidden;
 }
+
+#trendingTitle {
+  display: flex;
+  position: absolute;
+  padding-left: 5.9%;
+  padding-top: 20%;
+}
+
+#trendingColor {
+  color: #d96830;
+}
+
+#fireIcon {
+  color:red;
+  display: flex;
+  padding-top: 6%;
+  padding-left: 3%;
+}
+
 
 
 

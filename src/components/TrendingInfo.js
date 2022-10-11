@@ -14,7 +14,7 @@ const TrendingInfo = (props) => {
                             props.titles.english                       
                                 }>
                         <img 
-                            class="relative shadow-lg rounded-sm w-full border border-secondary"
+                            class="relative rounded"
                             id="trendingCard"
                             src={props.image}
                         />
