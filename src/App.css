@@ -6,7 +6,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #161617;
+  background-color: #18181a;
 }
 
 #animeCard:hover {
@@ -25,6 +25,11 @@ body {
   max-width: 10rem;
 }
 
+#favoritesCard {
+  max-height: 5rem;
+  max-width: 5rem;
+}
+
 #animeTitles {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -32,11 +37,25 @@ body {
   overflow: hidden;
 }
 
+#favoriteTitles {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: small;
+}
+
 #trendingTitle {
   display: flex;
   position: absolute;
   padding-left: 5.9%;
   padding-top: 20%;
+}
+
+#favoritedTitle {
+  display: flex;
+  position: absolute;
+  color: #d96830;
+  padding-left: 0.5%;
 }
 
 #trendingColor {
@@ -49,6 +68,54 @@ body {
   padding-top: 6%;
   padding-left: 3%;
 }
+
+#favoritesTableHeader {
+  max-width: 20px;
+  
+}
+
+#favoritesTable {
+  margin: 0;
+}
+
+#favoritesTableRows {
+  background-color:#2f3136;
+}
+
+#favoritesMain {
+  padding-top: 20%;
+  float: left;
+  padding-left: 5.4%;
+  width: 25%;
+}
+
+#popularMain {
+  padding-top: 20%;
+  padding-left: 5.4%;
+  margin-left: 25%;
+  width: 25%;
+  position: absolute;
+}
+
+#favoritesPosterDesigns {
+  padding-top: 12%;
+}
+
+#popularPosterDesigns {
+  padding-top: 12%;
+}
+
+#favoritesLink {
+  color: white;
+}
+
+#favoritesLink:hover {
+  color: #d96830;
+}
+
+
+
+
 
 
 

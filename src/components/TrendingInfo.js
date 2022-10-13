@@ -8,17 +8,17 @@ const TrendingInfo = (props) => {
                 <div class="p-4" id="animeCard">
                     <a href={props.animeUrl} 
                             target="_blank" 
-                            class="text-decoration-none text-white" 
+                            className="text-decoration-none text-white" 
                             alt={props.titles.english === null ?
                             props.titles.romaji:
                             props.titles.english                       
                                 }>
                         <img 
-                            class="relative rounded"
+                            className="relative rounded"
                             id="trendingCard"
                             src={props.image}
                         />
-                        <p class="fs-6 mt-1 text-center" id="animeTitles">
+                        <p className="fs-6 mt-1 text-center" id="animeTitles">
                             {props.titles.english === null ?
                             props.titles.romaji:
                             props.titles.english                       
